@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f7fa;
+            color: #333;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background-color: #4a90e2;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: white;
+        }
+
+        .sidebar h2 {
+            font-size: 1.5em;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        .menu-item {
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1em;
+        }
+
+        .menu-item:hover {
+            background-color: #3b79b7;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .main-content h3 {
+            font-size: 1.8em;
+            color: #4a90e2;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        /* Buttons and Links */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #4a90e2;
+            text-align: center;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #3b79b7;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Employee Management</h2>
+            <div class="menu-item" onclick="showContent('registration')">Registration</div>
+            <div class="menu-item" onclick="showContent('login')">Login</div>
+            <div class="menu-item" onclick="showContent('finance')">Finance</div>
+            <div class="menu-item" onclick="showContent('departments')">Departments</div>
+            <div class="menu-item" onclick="showContent('procurement')">Procurement</div>
+            <div class="menu-item" onclick="showContent('leave')">Leave</div>
+            <p style="margin-top: auto; text-align: center;">© 2024 SK AMOS</p>
+        </div>
+
+        <div class="main-content">
+            <div id="registration" class="content-section">
+                <h3>Employee Registration</h3>
+                <p class="content">Register new employees by filling in their personal information, job role, and department.</p>
+                <a href="#" class="btn">Register Now</a>
+            </div>
+
+            <div id="login" class="content-section" style="display: none;">
+                <h3>Employee Login</h3>
+                <p class="content">Access the system by logging in with your employee credentials.</p>
+                <a href="#" class="btn">Login</a>
+            </div>
+
+            <div id="finance" class="content-section" style="display: none;">
+                <h3>Finance Management</h3>
+                <p class="content">Manage employee salaries, bonuses, and other financial details.</p>
+                <a href="#" class="btn">Manage Finances</a>
+            </div>
+
+            <div id="departments" class="content-section" style="display: none;">
+                <h3>Department Management</h3>
+                <p class="content">View and organize the various departments within the organization.</p>
+                <a href="#" class="btn">View Departments</a>
+            </div>
+
+            <div id="procurement" class="content-section" style="display: none;">
+                <h3>Procurement Management</h3>
+                <p class="content">Oversee the procurement processes for employee equipment and resources.</p>
+                <a href="#" class="btn">Procurement Details</a>
+            </div>
+
+            <div id="leave" class="content-section" style="display: none;">
+                <h3>Leave Management</h3>
+                <p class="content">Handle employee leave requests and approve or reject them accordingly.</p>
+                <a href="#" class="btn">Manage Leaves</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+       
+        function showContent(section) {
+            
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(s => s.style.display = 'none');
+
+            
+            document.getElementById(section).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
